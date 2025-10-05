@@ -12,7 +12,7 @@ const API_URL = "https://secrets-api.appbrewery.com";
 // https://secrets-api.appbrewery.com/
 
 //TODO 1: Add your own bearer token from the previous lesson.
-const yourBearerToken = "";
+const yourBearerToken = "8b949144-891d-4b9a-aeb6-39f056ac4d7a";
 const config = {
   headers: { Authorization: `Bearer ${yourBearerToken}` },
 };
@@ -20,7 +20,7 @@ const config = {
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index.ejs", { content: "Waiting for data..." });
+  res.render("index.ejs", { content: "Waiting for data...." });
 });
 
 app.post("/get-secret", async (req, res) => {
