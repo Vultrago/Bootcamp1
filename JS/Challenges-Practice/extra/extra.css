@@ -1,0 +1,7 @@
+.hidden{
+    display: none;
+}
+
+.onShow{
+    background-color: red;
+}

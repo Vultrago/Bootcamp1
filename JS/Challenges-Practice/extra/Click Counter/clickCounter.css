@@ -1,0 +1,12 @@
+#button{
+    height: 100px;
+    width: 200px;
+    background-color: rgb(164, 114, 211);
+    font-weight:bold;
+    font-size: 20px;
+    color: black;
+    
+}
+.onHover{
+    background-color: tomato;
+}

@@ -1,0 +1,24 @@
+
+<%- include("partials/header.ejs") %>
+
+<h1 class="contact">Write it youself! 🥳</h1>
+<form action="/your-Stories" method="POST">
+  <!-- <input name="name" type="text" class="feedback-input" placeholder="Name" /> -->
+  <input name="theme" type="text" class="feedback-input" placeholder="Theme" />
+  <textarea name="text" class="feedback-input" placeholder="Story"></textarea>
+  <input type="submit" value="SUBMIT" />
+</form> 
+
+<% if (submittedData){ %>
+  <div class="submitted-story">
+    <h2>Submitted Story:</h2>
+    <p><strong>Theme:</strong><%=submittedData.theme %></p>
+    <p><strong>Story:</strong><%=submittedData.text%></p>
+  </div>
+<% } %>
+<br>
+<br>
+<br>
+
+<%- include("partials/footer.ejs") %>
+

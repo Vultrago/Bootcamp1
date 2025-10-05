@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hidden Character Remover</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f9f9f9;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .output {
+      margin-top: 30px;
+    }
+    .output h2 {
+      margin-bottom: 10px;
+    }
+    .output textarea {
+      background: #e8f5e9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Remove Hidden Characters</h1>
+
+  <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+  <br>
+  <button onclick="cleanText()">Clean Text</button>
+
+  <div class="output">
+    <h2>Cleaned Text:</h2>
+    <textarea id="outputText" readonly></textarea>
+  </div>
+
+  <script>
+    function cleanText() {
+      let text = document.getElementById('inputText').value;
+
+      // Replace hidden characters
+      text = text
+        .replace(/\u2013|\u2014/g, '-')            // En dash or em dash → hyphen
+        .replace(/\u00A0/g, ' ')                   // Non-breaking space → normal space
+        .replace(/[\u200B-\u200D\uFEFF]/g, '')      // Zero-width chars → remove
+        .replace(/\s+/g, ' ')                      // Multiple spaces → single space
+        .trim();                                   // Remove leading/trailing spaces
+
+      document.getElementById('outputText').value = text;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+My Journal:
+Today I learned how to use appendFile in Node.js.

@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+<h1> Your short story starts here!👇</h1>
+
+<% const allInputs = locals.names && locals.noun && locals.adjective && locals.month && locals.days && locals.intimate %>
+
+<% if (allInputs){ %>
+    <p> Once upon a time, far in the Tlakons, very far away from home, there was an unknown man named <%= names %> with <%= adjective %> hands and scarred face. In the month of <%=month %>  on a <%= days %> morning, he saw a woman which he never sen before and he decided to <%= intimate %> her and invite her to a a shot of <%= animals %> blood.</p>
+
+<% } %>
+
+
+<form action="/submit" method="POST">
+  <input type="submit" value="Generate Story">
+</form>
+<%- include("partials/footer.ejs") %>
